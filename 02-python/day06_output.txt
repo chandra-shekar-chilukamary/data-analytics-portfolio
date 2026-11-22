@@ -1,0 +1,57 @@
+
+=== 1 Descriptive statistics ===
+                   mean    median      mode       std  cv_pct  skew  kurtosis
+column                                                                       
+YearlyIncome   57305.78  60000.00  60000.00  32285.84   56.34  0.82      0.65
+Revenue         1588.33    270.26      4.99   2124.23  133.74  1.41      1.34
+Age               44.22     42.00     32.00     11.55   26.11  0.70     -0.04
+TotalChildren      1.84      2.00      0.00      1.61   87.42  0.47     -0.95
+Mean above median and skew above 0 means a right-skewed column.
+
+=== 2 Shape of customer revenue (text histogram) ===
+     0-500   9315  50.4%  ############################################################
+  500-1000   1473   8.0%  #########
+ 1000-1500    902   4.9%  #####
+ 1500-2000    874   4.7%  #####
+ 2000-3000   1804   9.8%  ###########
+ 3000-5000   2384  12.9%  ###############
+     5000+   1732   9.4%  ###########
+skew before log: 1.41  after log1p: -0.09
+
+=== 3 Probability, conditional probability, Bayes ===
+P(male): 0.506  P(Professional): 0.299  P(income>=70000): 0.364
+P(male and Professional): 0.148  if independent: 0.151
+P(high income | Professional): 0.608  lift vs overall: 1.67
+Bayes P(Professional | high income): 0.499  direct check: 0.499
+
+=== 4 Normal distribution on Age ===
+mean age: 44.2  sd: 11.5
+within 1 sd: 65.7% (normal says 68.3%)
+within 2 sd: 96.2% (normal says 95.4%)
+within 3 sd: 99.6% (normal says 99.7%)
+z-score of age 60: 1.37  percentile (normal): 91.4
+P(30 <= age <= 45) normal: 0.418  actual: 0.537
+
+=== 5 Binomial: customers owning 2 or more cars ===
+p = 0.507  n = 20  expected count: 10.1  sd: 2.24
+P(exactly 8): 0.1138
+P(at least 10): 0.611
+simulation P(exactly 8): 0.1138  P(at least 10): 0.6095
+
+=== 6 Poisson: orders per day in 2013 ===
+mean orders/day: 58.3  variance: 271.3  variance/mean: 4.7
+share of days with <= 58 orders: actual 0.452, Poisson 0.518
+days with zero orders: 0  Poisson P(0): 0.0
+A variance far above the mean means demand is trending or clustered, so Poisson is too tight.
+
+=== 7 Central Limit Theorem on customer revenue ===
+population mean: 1588.3  sd: 2124.2  skew: 1.41
+sample_size  mean_of_means  sd_of_means  theory_sd  skew_of_means
+         1         1542.3       2080.2     2124.2          1.43
+         5         1602.8        946.6      950.0          0.58
+        30         1600.1        392.6      387.8          0.28
+       100         1589.9        212.3      212.4          0.10
+
+=== 8 Covariance and correlation: income vs revenue ===
+Pearson r: 0.162  Spearman rho: 0.122  covariance: 11088451.0
+R squared: 0.0261 (share of revenue variation explained by income alone)
