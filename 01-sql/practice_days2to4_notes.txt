@@ -1,0 +1,1 @@
+Practice solutions for Days 2 to 4 completed: joins, subqueries, CTEs, window functions, index CustomerKey, views and procedures 
