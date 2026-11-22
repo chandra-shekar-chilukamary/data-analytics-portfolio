@@ -1,0 +1,91 @@
+
+=== 1 Shape and data types ===
+customers: (18484, 29)  sales: (60398, 9)
+str        21
+int64       6
+bool        1
+float64     1
+Name: count, dtype: int64
+SalesOrderNumber                str
+OrderDate            datetime64[us]
+CustomerKey                   int64
+ProductKey                    int64
+SalesTerritoryKey             int64
+OrderQuantity                 int64
+UnitPrice                   float64
+SalesAmount                 float64
+TotalProductCost            float64
+dtype: object
+
+=== 2 Missing values (customers) ===
+              missing    pct
+Suffix          18481  100.0
+Title           18383   99.5
+AddressLine2    18172   98.3
+MiddleName       7830   42.4
+
+=== 3 Duplicates ===
+duplicate customer rows: 0
+duplicate CustomerKey: 0
+duplicate sales rows: 0
+
+=== 4 Fix types and fill missing values ===
+holes added: 924
+true mean income: 57306
+mean after holes: 57421
+error with overall median: 244
+error with group median: 58
+
+=== 5 Outliers in SalesAmount ===
+IQR bounds: -790.11 1338.05
+IQR outliers: 9586 = 15.9 % of rows
+z-score above 3: 1947
+   SalesOrderNumber  ProductKey  SalesAmount
+0           SO43697         310      3578.27
+5           SO43702         311      3578.27
+6           SO43703         310      3578.27
+9           SO43706         312      3578.27
+10          SO43707         312      3578.27
+
+=== 6 Revenue and income by occupation ===
+customers with no sales: 0
+                   customers  avg_income    revenue
+EnglishOccupation                                  
+Professional            5520     74185.0  9907977.0
+Skilled Manual          4577     51715.0  6440081.0
+Management              3075     92325.0  5467862.0
+Clerical                2928     30710.0  4684787.0
+Manual                  2384     16451.0  2857971.0
+
+=== 7 Education by gender (row percentages) ===
+Gender                  F     M
+EnglishEducation               
+Bachelors            0.49  0.51
+Graduate Degree      0.51  0.49
+High School          0.48  0.52
+Partial College      0.50  0.50
+Partial High School  0.48  0.52
+
+=== 8 Correlation with revenue ===
+YearlyIncome       0.16
+TotalChildren     -0.07
+NumberCarsOwned   -0.04
+Age               -0.06
+Revenue            1.00
+Name: Revenue, dtype: float64
+
+=== 9 Monthly revenue trend ===
+Month
+2013-06    1643178.0
+2013-07    1371676.0
+2013-08    1551066.0
+2013-09    1447496.0
+2013-10    1673293.0
+2013-11    1780920.0
+2013-12    1874360.0
+2014-01      45695.0
+Freq: M, Name: SalesAmount, dtype: float64
+best month: 2013-12 1874360
+
+=== 10 Save cleaned data ===
+saved customers_clean.csv (18484, 34)

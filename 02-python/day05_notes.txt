@@ -1,0 +1,1 @@
+Day 5 complete: Pandas cleaning, missing values, IQR outliers, groupby, merge, pivot. Findings: 31-45 age band is the top segment, Title column 99.5 percent missing, 2013 revenue up about 180 percent vs 2012 
