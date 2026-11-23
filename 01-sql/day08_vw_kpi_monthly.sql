@@ -1,0 +1,3 @@
+CREATE   VIEW dbo.vw_kpi_monthly AS SELECT d.CalendarYear AS Yr, d.MonthNumber AS Mth, d.YearMonth, CAST(SUM(f.SalesAmount) AS DECIMAL(14,2)) AS Revenue, CAST(SUM(f.Profit) AS DECIMAL(14,2)) AS Profit, CAST(100.0 * SUM(f.Profit) / NULLIF(SUM(f.SalesAmount), 0) AS DECIMAL(5,2)) AS MarginPct, COUNT(DISTINCT f.SalesOrderNumber) AS Orders, COUNT(DISTINCT f.CustomerKey) AS Customers, CAST(SUM(f.SalesAmount) / NULLIF(COUNT(DISTINCT f.SalesOrderNumber), 0) AS DECIMAL(10,2)) AS AvgOrderValue FROM dbo.fact_sales f JOIN dbo.dim_date d ON f.DateKey = d.DateKey GROUP BY d.CalendarYear, d.MonthNumber, d.YearMonth
+
+(1 row affected)

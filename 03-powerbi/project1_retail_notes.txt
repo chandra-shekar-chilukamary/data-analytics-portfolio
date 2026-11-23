@@ -1,0 +1,1 @@
+Project 1 Retail Analytics. Day 8: built star schema RetailDW with dim_date, dim_product, dim_customer, dim_territory and fact_sales (60,398 rows). Loaded from AdventureWorksDW2022 and reconciled rows and revenue. Views: vw_kpi_monthly, vw_customer_value. Next: Excel KPIs (Day 9), Power BI model and DAX (Days 10 and 11), dashboard (Day 12). 

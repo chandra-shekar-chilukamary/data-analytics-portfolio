@@ -1,0 +1,3 @@
+CREATE   VIEW dbo.vw_customer_value AS SELECT c.CustomerKey, c.FullName, c.Country, c.Occupation, c.IncomeBand, COUNT(DISTINCT f.SalesOrderNumber) AS Orders, CAST(SUM(f.SalesAmount) AS DECIMAL(14,2)) AS Revenue, CAST(SUM(f.Profit) AS DECIMAL(14,2)) AS Profit, MIN(d.FullDate) AS FirstOrder, MAX(d.FullDate) AS LastOrder, CASE WHEN SUM(f.SalesAmount) >= 5000 THEN 'High' WHEN SUM(f.SalesAmount) >= 1500 THEN 'Mid' ELSE 'Low' END AS Segment FROM dbo.fact_sales f JOIN dbo.dim_customer c ON f.CustomerKey = c.CustomerKey JOIN dbo.dim_date d ON f.DateKey = d.DateKey GROUP BY c.CustomerKey, c.FullName, c.Country, c.Occupation, c.IncomeBand
+
+(1 row affected)
