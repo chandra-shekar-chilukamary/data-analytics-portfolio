@@ -1,0 +1,1 @@
+Day 7 complete: CI, t-tests, chi-square, ANOVA, A/B test, power, peeking, Bonferroni, bootstrap. Week 1 test taken 

@@ -1,0 +1,32 @@
+
+=== 1 95 percent CI for mean age and for the share of homeowners ===
+mean age: 44.22  95% CI: 44.05 to 44.38
+homeowner share: 0.676  95% CI: 0.67 to 0.683
+
+=== 2 Revenue: married vs single ===
+married mean: 1517.1  single mean: 1672.5
+Welch p: 7.067e-07  Mann-Whitney p: 9.515e-09  Cohen d: -0.073
+Significant - look at d for the size: small
+
+=== 3 Chi-square: marital status vs home ownership ===
+HouseOwnerFlag     0     1
+MaritalStatus             
+M               1847  8164
+S               4135  4338
+chi2: 1930.0  p: 0  Cramers V: 0.323
+
+=== 4 ANOVA: revenue by commute distance ===
+                 count    mean
+CommuteDistance               
+0-1 Miles         6310  1776.2
+1-2 Miles         3232  1405.2
+10+ Miles         2494  1503.9
+2-5 Miles         3234  1535.4
+5-10 Miles        3214  1522.4
+F: 20.7  p: 4.985e-17  eta squared: 0.0045
+
+=== 5 Sample size planning (80 percent power, alpha 0.05) ===
+5.0% -> 5.5%: need 31,218 per group
+5.0% -> 6.0%: need 8,143 per group
+5.0% -> 7.0%: need 2,199 per group
+Smaller lifts need far bigger tests.

@@ -1,0 +1,32 @@
+
+=== 1 UnitPrice: mean, median, skew ===
+mean: 486.09  median: 29.99  skew: 1.93
+Mean is above median: right-skewed. Most sales are cheap items, with a few expensive products pulling the mean up.
+share of rows priced under 100: 73.9 %
+share of rows priced over 1000: 18.8 %
+
+=== 2 P(no car | Manual) vs P(no car) overall ===
+P(no car) overall: 0.229
+P(no car | Manual): 0.253
+lift: 1.11 (above 1 means Manual workers are more likely to own no car)
+
+=== 3 Share within 1 SD of mean YearlyIncome ===
+mean: 57306  sd: 32286  skew: 0.82
+share within 1 sd: 67.7 % (normal says 68.3%)  gap: -0.6 points
+Income comes in set bands and is right-skewed, so it is not a bell curve.
+
+=== 4 Binomial: at least 10 of 15 customers are female ===
+female share p: 0.494
+P(at least 10 of 15): 0.1403
+P(exactly 8 of 15): 0.1939
+expected females in 15: 7.41
+
+=== 5 Central Limit Theorem on SalesAmount ===
+population mean: 486.1  sd: 928.5  skew: 1.93
+sample_size  mean_of_means  sd_of_means  theory_sd  skew_of_means
+         1          462.5        909.2      928.5          2.00
+        10          490.8        291.9      293.6          0.54
+        50          485.5        131.0      131.3          0.29
+       200          485.7         65.8       65.7          0.12
+smallest sample size tested where skew of the means is under 0.3: 50
+The sd of the means follows the theory column, which is sd divided by the square root of n.
